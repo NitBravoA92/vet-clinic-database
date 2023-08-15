@@ -3,6 +3,7 @@
 -- Create database
 CREATE DATABASE vet_clinic;
 
+-- Create animals table
 CREATE TABLE IF NOT EXISTS animals (
     id serial PRIMARY KEY,
     name varchar(100) NOT NULL,
@@ -11,3 +12,6 @@ CREATE TABLE IF NOT EXISTS animals (
     neutered boolean,
     weight_kg decimal(5, 2),
 );
+
+-- Add species column to the animals table
+ALTER TABLE animals ADD species VARCHAR (100);
