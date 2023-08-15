@@ -48,6 +48,8 @@
 - **Creating a table using the sql 'CREATE TABLE' statement.**
 - **Using the 'INSERT INTO' sql statement to record data in a table.**
 - **Using the 'SELECT' sql statement to query data from a table.**
+- **Using aggregate functions like COUNT, MAX, MIN and AVG.**
+- **Using SQL transactions**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,7 +122,7 @@ When executing the above command, a series of queries will be made to the animal
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **Update animals table records.**
+- [x] **Update animals table records.**
 - [ ] **Add other tables to the database with different queries**
 - [ ] **Add "join tables"**
 - [ ] **Create database performance audit**
