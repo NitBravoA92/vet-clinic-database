@@ -102,3 +102,46 @@ COMMIT;
 -- Check if the changes persist
 SELECT * FROM animals;
 
+
+-- Analyze the animals data using Aggregate Functions
+
+
+-- Question 1: How many animals are there?
+
+-- Total number of animals
+SELECT COUNT(*) AS total_animals FROM animals;
+
+
+
+-- Question 2: How many animals have never tried to escape?
+
+-- The number of animals that have never tried to escape
+SELECT COUNT(*) AS animals_never_escape FROM animals WHERE escape_attempts = 0;
+
+
+
+-- Question 3: What is the average weight of animals?
+
+-- The average weight of animals
+SELECT AVG(weight_kg) AS animals_average_weight FROM animals;
+
+
+
+-- Question 4: Who escapes the most, neutered or not neutered animals?
+
+-- The animals that escape the most grouped by neutered status
+SELECT neutered AS neutered_animals, MAX(escape_attempts) AS animals_escape_the_most FROM animals GROUP BY neutered;
+
+
+
+-- Question 5: What is the minimum and maximum weight of each type of animal?
+
+-- minimum and maximum weight of each type of animal
+SELECT species AS animals_type, MIN(weight_kg) AS animals_minimum_weight, MAX(weight_kg) AS animals_maximum_weight FROM animals GROUP BY species;
+
+
+
+-- Question 6: What is the average number of escape attempts per animal type of those born between 1990 and 2000?
+
+-- The average number of escapes by type of animal
+SELECT species AS animals_type, AVG(escape_attempts) animals_escapes_average FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
