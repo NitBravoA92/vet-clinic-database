@@ -23,3 +23,82 @@ SELECT * FROM animals WHERE name != 'Gabumon';
 
 -- This query will return all animals' data with a weight between 10.4kg and 17.3kg
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
+
+
+-- Begin first Transaction
+BEGIN;
+
+-- Update the species column
+UPDATE animals SET species = 'unspecified';
+
+-- Check the changes are done well
+SELECT * FROM animals;
+
+-- Cancel the transaction
+ROLLBACK;
+
+-- Check the changes are undone
+SELECT * FROM animals;
+
+
+-- Begin second Transaction
+BEGIN;
+
+-- Add the string 'digimon' to the species column where the name of the animal ends on mon
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+
+-- Add the string 'pokemon' to the species column where the species column is null or empty
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL OR species = '';
+
+-- Check the changes are done
+SELECT * FROM animals;
+
+-- Save the changes
+COMMIT;
+
+-- Check the changes persist
+SELECT * FROM animals;
+
+
+
+-- Begin third Transaction
+BEGIN;
+
+-- Delete all records in the animals table
+DELETE FROM animals;
+
+-- Check the changes are done
+SELECT * FROM animals;
+
+-- Cancel the transaction
+ROLLBACK;
+
+-- Check the changes are undone
+SELECT * FROM animals;
+
+
+
+-- Begin fourth Transaction
+BEGIN;
+
+-- Delete all animals that have born after January 01, 2022
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+
+-- Create a savepoint to rollback 
+SAVEPOINT delete_savepoint;
+
+-- Update the animal table to change the sign of the weight
+UPDATE animals SET weight_kg = weight_kg * -1;
+
+-- Cancel the transaction
+ROLLBACK TO SAVEPOINT delete_savepoint;
+
+-- Update the animals table to change the signs of all negative weights
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+
+-- Save the changes
+COMMIT;
+
+-- Check if the changes persist
+SELECT * FROM animals;
+
