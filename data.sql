@@ -60,3 +60,10 @@ INSERT INTO species (name) VALUES('Pokemon');
 
 -- Specie: Digimon
 INSERT INTO species (name) VALUES('Digimon');
+
+
+-- Add the species 'Digimon' to animals whose name ends in 'mon'
+UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
+
+-- Add the species 'Pokemon' to animals whose name not end in 'mon'
+UPDATE animals SET species_id = 1 WHERE name NOT LIKE '%mon';
