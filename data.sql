@@ -67,3 +67,19 @@ UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
 
 -- Add the species 'Pokemon' to animals whose name not end in 'mon'
 UPDATE animals SET species_id = 1 WHERE name NOT LIKE '%mon';
+
+
+-- Set Sam Smith as the owner of Agumon
+UPDATE animals SET owner_id = 1 WHERE name = 'Agumon';
+
+-- Set Jennifer Orwell as the owner of Gabumon and Pikachu
+UPDATE animals SET owner_id = 2 WHERE name = 'Gabumon' OR name = 'Pikachu';
+
+-- Set Bob as the owner of Devimon and Plantmon
+UPDATE animals SET owner_id = 3 WHERE name = 'Devimon' OR name = 'Plantmon';
+
+-- Set Melody Pond as the owner of Charmander, Squirtle and Blossom
+UPDATE animals SET owner_id = 4 WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom';
+
+--Set Dean Winchester as the owner of Angemon and Boarmon
+UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon';
