@@ -28,3 +28,6 @@ CREATE TABLE IF NOT EXISTS species(
     id SERIAL PRIMARY KEY,
     name VARCHAR(200) NOT NULL
 );
+
+-- Remove the column species from the animals table
+ALTER TABLE animals DROP COLUMN species;
