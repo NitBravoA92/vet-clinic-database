@@ -53,3 +53,10 @@ INSERT INTO owners (full_name, age) VALUES ('Dean Winchester', 14);
 
 -- Owner: Jodie Whittaker
 INSERT INTO owners (full_name, age) VALUES ('Jodie Whittaker', 38);
+
+
+-- Specie: Pokemon
+INSERT INTO species (name) VALUES('Pokemon');
+
+-- Specie: Digimon
+INSERT INTO species (name) VALUES('Digimon');
