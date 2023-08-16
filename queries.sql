@@ -148,23 +148,54 @@ SELECT species AS animals_type, AVG(escape_attempts) animals_escapes_average FRO
 
 
 
+
+-- Analyze the animals, species and owners data using JOINs clauses to link data from related tables
+
+
+
+-- Question 1: What animals belong to Melody Pond?
+
 -- Show all animals owned by Melody Pond
 SELECT o.full_name AS animal_owner, a.name AS animal_name FROM animals a INNER JOIN owners o ON a.owner_id = o.id WHERE o.full_name = 'Melody Pond';
+
+
+
+-- Question 2: List of all animals that are pokemon.
 
 -- Show all 'Pokemon' type animals
 SELECT a.name AS animal_name, s.name AS animal_type FROM animals a INNER JOIN species s ON a.species_id = s.id WHERE s.name = 'Pokemon';
 
+
+
+-- Question 3: List all owners and their animals, remember to include those that don't own any animal.
+
 -- Show all animals owners and their animals
 SELECT o.full_name AS animal_owner, a.name AS animal_name FROM animals a RIGHT JOIN owners o ON a.owner_id = o.id;
+
+
+
+-- Question 4: How many animals are there per species?
 
 -- Show all animals by species
 SELECT s.name AS specie, COUNT(a.name) AS total_animals FROM animals a INNER JOIN species s ON a.species_id = s.id GROUP BY s.name; 
 
+
+
+-- Question 5: List all Digimon owned by Jennifer Orwell.
+
 -- Show all 'Digimon' type animals owned by Jennifer Orwell.
 SELECT a.name AS animal_name, s.name AS animal_type, o.full_name AS animal_owner FROM animals a INNER JOIN species s ON a.species_id = s.id INNER JOIN owners o ON a.owner_id = o.id WHERE s.name = 'Digimon' AND o.full_name = 'Jennifer Orwell';
 
+
+
+-- Question 6: List all animals owned by Dean Winchester that haven't tried to escape.
+
 -- Show all of Dean Winchester animals that have never tried to escape.
 SELECT o.full_name AS animal_owner, a.name AS animal_name, a.escape_attempts AS animal_total_escapes FROM animals a INNER JOIN owners o ON a.owner_id = o.id WHERE o.full_name = 'Dean Winchester' AND a.escape_attempts = 0;
+
+
+
+-- Question 7: Who owns the most animals?
 
 -- Show who owns the most animals.
 SELECT o.full_name AS animal_owner, COUNT(a.name) AS total_animals FROM animals a INNER JOIN owners o ON a.owner_id = o.id GROUP BY o.full_name ORDER BY total_animals DESC LIMIT 1;
