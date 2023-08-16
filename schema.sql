@@ -15,3 +15,16 @@ CREATE TABLE IF NOT EXISTS animals (
 
 -- Add species column to the animals table
 ALTER TABLE animals ADD species VARCHAR (100);
+
+-- Create the owners table
+CREATE TABLE IF NOT EXISTS owners(
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    age INT
+);
+
+-- Create the species table
+CREATE TABLE IF NOT EXISTS species(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(200) NOT NULL
+);
