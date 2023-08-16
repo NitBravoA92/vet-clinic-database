@@ -34,3 +34,22 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
 
 -- Animal: Ditto
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES ('Ditto', '2022-05-14', 4, true, 22);
+
+
+-- Owner: Sam Smith
+INSERT INTO owners (full_name, age) VALUES ('Sam Smith', 34);
+
+-- Owner: Jennifer Orwell
+INSERT INTO owners (full_name, age) VALUES ('Jennifer Orwell', 19);
+
+-- Owner: Bob
+INSERT INTO owners (full_name, age) VALUES ('Bob', 45);
+
+-- Owner: Melody Pond
+INSERT INTO owners (full_name, age) VALUES ('Melody Pond', 77);
+
+-- Owner: Dean Winchester
+INSERT INTO owners (full_name, age) VALUES ('Dean Winchester', 14);
+
+-- Owner: Jodie Whittaker
+INSERT INTO owners (full_name, age) VALUES ('Jodie Whittaker', 38);
