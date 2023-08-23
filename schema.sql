@@ -79,3 +79,6 @@ CREATE TABLE IF NOT EXISTS visits(
     REFERENCES vets(id)
     ON DELETE CASCADE
 );
+
+-- Add the email column to the owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
