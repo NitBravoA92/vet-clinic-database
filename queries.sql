@@ -240,3 +240,12 @@ SELECT COUNT(*) AS total_visits_no_specialization FROM visits v INNER JOIN anima
 
 -- Question 9: What specialty should Maisy Smith consider getting? Look for the species she gets the most?
 SELECT (SELECT s.name FROM species s WHERE s.id = a.species_id) AS specialty_name FROM visits v INNER JOIN vets ve ON v.vet_id = ve.id INNER JOIN animals a ON v.animal_id = a.id WHERE ve.name = 'Maisy Smith' GROUP BY specialty_name ORDER BY COUNT(*) DESC LIMIT 1;
+
+
+
+-- Queries to audit the database performance and analyze the low queries.
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits WHERE animal_id = 4;
+
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
