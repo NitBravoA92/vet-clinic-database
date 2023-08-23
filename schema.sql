@@ -79,3 +79,15 @@ CREATE TABLE IF NOT EXISTS visits(
     REFERENCES vets(id)
     ON DELETE CASCADE
 );
+
+-- Add the email column to the owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Add index for the animal_id column in the visits table
+CREATE INDEX idx_visits_animal_id ON visits (animal_id);
+
+-- Add index for the vet_id column in the visits table
+CREATE INDEX idx_visits_vet_id ON visits (vet_id);
+
+-- Add index for the email column in the owners table
+CREATE INDEX idx_owner_email ON owners(email);
