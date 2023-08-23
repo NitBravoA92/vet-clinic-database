@@ -22,6 +22,7 @@
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
+- [DATABASE SCHEMA DIAGRAM ](#database-schema-diagram-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -164,5 +165,12 @@ I would like to thank my Microverse teammates for their support. They have suppo
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+# DATABASE SCHEMA DIAGRAM <a name="database-schema-diagram"></a>
+
+<img src=".\schema\vet_clinic-shcema-diagram-img.jpg" alt="vet_clinic database schema diagram" width="auto"  height="auto" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
