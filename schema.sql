@@ -82,3 +82,7 @@ CREATE TABLE IF NOT EXISTS visits(
 
 -- Add the email column to the owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Add index for the animal_id column in the visits table
+CREATE INDEX idx_visits_animal_id ON visits (animal_id);
+
